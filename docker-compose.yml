@@ -1,0 +1,30 @@
+services:
+  app_foro:
+    build:
+      context: ./forohub
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      DB_URL: jdbc:mysql://forohub:3306/nosaka_forohub?createDatabaseIfNotExist=true&serverTimezone=UTC
+      DB_USERNAME: nosaka
+      DB_PASSWORD: 12345
+    restart: always
+    depends_on:
+      forohub:
+        condition: service_healthy
+
+  forohub:
+    image: mysql:8.0.33
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Namiswam-1
+      MYSQL_PASSWORD: 12345
+      MYSQL_USER: nosaka
+      MYSQL_DATABASE: nosaka_forohub
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 10
