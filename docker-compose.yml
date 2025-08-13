@@ -24,7 +24,10 @@ services:
       MYSQL_USER: nosaka
       MYSQL_DATABASE: nosaka_forohub
     restart: always
+    volumes:
+      - ./mysql_data:/var/lib/mysql  
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 10s
       retries: 10
+
