@@ -50,8 +50,9 @@ export default function Login() {
                             <Image
                                 width={800}
                                 height={800}
-                                src="/auth/hero.svg"
+                                src="/forohub/auth/hero.svg"
                                 alt="Image"
+                                unoptimized
                                 className="absolute inset-0 h-full w-full"
                             />
                         </div>
