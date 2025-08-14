@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.forohub.forohub.ForohubApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.003 s -- in com.forohub.forohub.ForohubApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.925 s -- in com.forohub.forohub.ForohubApplicationTests
