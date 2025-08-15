@@ -25,9 +25,11 @@ services:
       MYSQL_PASSWORD: 12345
       MYSQL_USER: nosaka
       MYSQL_DATABASE: nosaka_forohub
+      TZ: America/Guayaquil           
     restart: always
     volumes:
-      - ./mysql_data:/var/lib/mysql  
+      - ./mysql_data:/var/lib/mysql
+      - /etc/localtime:/etc/localtime:ro 
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 10s
